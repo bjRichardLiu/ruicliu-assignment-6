@@ -52,17 +52,17 @@ def generate_plots(N, mu, sigma2, S):
     # TODO 2: Run a loop S times to generate datasets and calculate slopes and intercepts
     # Hint: For each iteration, create random X and Y values using the provided parameters
     for _ in range(S):
-        # TODO: Generate random X values with size N between 0 and 1
+        # Generate random X values with size N between 0 and 1
         X_sim = np.random.rand(N)
 
-        # TODO: Generate Y values with normal additive error (mean mu, variance sigma^2)
+        # Generate Y values with normal additive error (mean mu, variance sigma^2)
         Y_sim = np.random.normal(mu, sigma2, N)
 
-        # TODO: Fit a linear regression model to X_sim and Y_sim
+        # Fit a linear regression model to X_sim and Y_sim
         sim_model = LinearRegression()
         sim_model.fit(X_sim.reshape(-1, 1), Y_sim)
 
-        # TODO: Append the slope and intercept of the model to slopes and intercepts lists
+        # Append the slope and intercept of the model to slopes and intercepts lists
         slopes.append(sim_model.coef_[0])  # Replace None with code to append slope
         intercepts.append(sim_model.intercept_)  # Replace None with code to append intercept
 
